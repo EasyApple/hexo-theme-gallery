@@ -1,4 +1,6 @@
 menu:
   Home: /
-  Archives: /archives
-  Github: https://github.com/EasyApple/hexo-theme-35mm
+  # Tags: /tags/
+  # Categories: /categories/
+  Archives: /archives/
+  About: /about/

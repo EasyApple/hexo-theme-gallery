@@ -1,7 +1,9 @@
 Menu:
   Home: 首页
+  Tags: 标签
+  Categories: 分类
   Archives: 归档
-  Github: 源码
+  About: 关于
 
 Paginator:
   Prev: 上一页

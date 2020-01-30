@@ -1,4 +1,5 @@
 # hexo-theme-gallery
-a Hexo theme for photography, gallery
 
-thanks to: https://www.ahonn.me/blog/create-a-hexo-theme-from-scratch
+## version 0.1.0
+
+A Hexo theme for photography, gallery

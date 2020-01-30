@@ -9,5 +9,262 @@ body {
   margin: 0 auto;
 }
 
+
+.main {
+    margin: 0 auto; /* 居中 */
+    padding-bottom: 150px;
+    margin-top: 50px;
+    width: 90%;
+}
+
+.main-inner {
+    width: 100%;
+    margin-top: unset;
+}
+
+.header {
+    margin: 0 auto; /* 居中 */
+    border-bottom: unset;
+    width: 90%;
+}
+
+body {
+    background-image: unset;
+    background-attachment: unset;
+    background-size: 100%;
+}
+
+.menu .menu-item a {
+    font-weight: 300;
+    color: #555;
+}
+
+.page-post-detail .post-meta {
+    display: none;
+}
+
+.box {
+    margin-top: 30px;
+    width: 100%;
+    visibility: visible;
+    overflow: auto;
+    zoom: 1;
+    background: #121212;
+    color: #555;
+}
+
+.sub-box {
+    float: left;
+    margin-left: 1%;
+    width: 32%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    display: inline;
+}
+
+.box li {
+    float: top;
+    width: 100%;
+    height: auto;
+    /* height: 360px; */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    display: inline;
+}
+
+.box li span {
+    display: block;
+    padding: 4% 7% 10% 7%;
+    min-height: 80px;
+    background: #fff;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box p {
+    display: block;
+    background: #fff;
+    color: #555;
+    font-size: 12px;
+    font-family: 'SwisMedium';
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.box span strong {
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+}
+
+.imgbox {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    /* height: 350px; */
+    overflow: hidden;
+    background: #121212;
+    color: #fff;
+}
+
+img.imgitem {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #121212;
+    color: #fff;
+}
+
+div#posts.posts-expand {
+    border: unset;
+    padding: unset;
+    margin-bottom: 10px;
+}
+
+.posts-expand .post-body img {
+    padding: 0px !important;
+}
+
+.posts-expand .post-title {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font: 50px/150px 'ChaletComprimeMilanSixty';
+    background-position: left bottom !important;
+    color: #fff;
+    background-size: 100% auto !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    text-align: center;
+    border: unset;
+    height: 300px;
+    cursor: unset !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-more-posts {
+    display: inline-block;
+    vertical-align: middle;
+    font: 30px/90px 'ChaletComprimeMilanSixty';
+    background-size: 100% auto !important;
+    background-color: #bcbcbc;
+    border: unset;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    height: 150px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-end-posts {
+    display: inline-block;
+    vertical-align: middle;
+    font: 20px/60px 'ChaletComprimeMilanSixty';
+    background-size: 100% auto !important;
+    background-color: #fff;
+    border: unset;
+    color: #bcbcbc;
+    width: 100%;
+    text-align: center;
+    height: 150px;
+}
+
+@media (max-width: 767px) {
+    .box li {
+        width: 100%;
+    }
+
+    .title {
+        height: 200px;
+    }
+
+    .box span {
+        min-height: 80px;
+        border-right: unset;
+        font-size: 17px;
+    }
+
+    .box p {
+        border-right: unset;
+        font-size: 12px;
+    }
+
+    .posts-expand {
+        margin: unset;
+    }
+
+    div#comments.comments.v {
+        width: 100%;
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container .main-inner {
+        width: 100%;
+    }
+}
+
+.footer {
+    margin-bottom: 50px;
+    background-color: #F2F2F2;
+    text-align: center;
+}
+
+/* for comment modules*/
+.vwrap {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+}
+
+.vempty {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+}
+
+.vh {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+}
+
+.power {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+}
+
+.vinfo {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+}
+
+.vcard {
+    margin: 0 auto; /* 居中 */
+    width: 100%;
+}
+
 @import "_partial/header";
 @import "_partial/post";
+@import "_partial/archive";
