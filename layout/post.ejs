@@ -72,55 +72,48 @@
     }
     
     var imgId = 0;
-    // 用于适配移动端小屏幕
-    var minWindowsWin = 600;
+var minWidth = 600;
+var midWidth = 1200;
+var colCount = 3;
     for (var i = 0; i < content.length; i++) {
-        // 计算每个相册一次展示多少照片
-        var showCnt = 9;
         var conBox=document.createElement("div");
         conBox.id='conBox' + i;
+    conBox.className="con-box";
         box.appendChild(conBox);
         var item=document.createElement("div");
         var title=content[i][0].url;
         item.innerHTML="<button class=title style=background:url("+xmlLink+'/'+title+"cover.jpg"+");><span style=display:inline;><strong style=color:#fff; >"+title.substring(0,title.length-1)+"</strong></span></button>";
         conBox.appendChild(item);
-        // 添加三个子框，用于实现按列 float
-        var leftBox=document.createElement("div");
-        leftBox.id='leftBox';
-        leftBox.className="sub-box";
-        var midBox=document.createElement("div");
-        midBox.id='midBox';
-        midBox.className="sub-box";
-        var rightBox=document.createElement("div");
-        rightBox.id='rightBox';
-        rightBox.className="sub-box";
-        if ((window.innerWidth)>minWindowsWin) {
-            conBox.appendChild(leftBox);
-            conBox.appendChild(midBox);
-            conBox.appendChild(rightBox);
+    // 计算子框个数，用于实现按列 float
+    if (window.innerWidth > midWidth) {
+        colCount = 3;
+    } else if (window.innerWidth < minWidth) {
+        colCount = 1;
+    } else {
+        colCount = 2;
+    }
+    // 计算每个相册一次展示多少照片
+    var showCnt = colCount * 3;
+    var subBoxes = new Array();
+    for (var c = 0; c < colCount; c++) {
+        subBoxes[c] = document.createElement("div");
+        subBoxes[c].id = 'subBox' + c;
+        subBoxes[c].className = "sub-box" + colCount;
+        conBox.appendChild(subBoxes[c]);
         }
         var extLen = 4;
         for (var j = 1; j < content[i].length && j < showCnt + 1; j++) {
             var con = content[i][j].url;
             var item = document.createElement("li");
-            item.innerHTML="<div class=imgbox id=imgbox><img id="+xmlLink+" class=imgitem src="+xmlLink+title+con+" alt="+con+"></div>";
-            if ((window.innerWidth)>minWindowsWin) {
-                if (j%3 == 1) {
-                leftBox.appendChild(item);
-                } else if (j%3 == 2) {
-                    midBox.appendChild(item);
-                } else {
-                    rightBox.appendChild(item);
-                }
-            } else {
-                conBox.appendChild(item);
-            }
+        item.innerHTML="<div class=imgbox id=imgbox><img id="+imgId+" class=imgitem src="+xmlLink+title+con+" alt="+con+"></div>";
+        var index = (j - 1)%colCount;
+        subBoxes[index].appendChild(item);
             regViewEvent(item, imgId);
             console.log("imgId: " + imgId);
             imgId++;
         }
-        if (content[i].length > showCnt && content[i][showCnt] != null) {
-            console.log("url: " + content[i][showCnt].url);
+
+    if (content[i].length > showCnt) {
             var moreItem=document.createElement("button");
             moreItem.className="btn-more-posts";
             moreItem.id = "more" + i;
@@ -149,26 +142,12 @@
         var begin = obj.value;
         console.log("curCnt: " + curCnt);
         console.log("begin: " + begin);
-        if ((window.innerWidth)>minWindowsWin) {
-            leftBox = parent.childNodes[1];
-            midBox = parent.childNodes[2];
-            rightBox = parent.childNodes[3];
-        }
         for (var j = begin; j < cont.length && j < Number(curCnt) + Number(begin); j++) {
             var con = cont[j].url;
             var item = document.createElement("li");
             item.innerHTML="<div class=imgbox id=imgbox><img id="+curId+" class=imgitem src="+xmlLink+title+con+" alt="+con+"></div>";
-            if ((window.innerWidth)>minWindowsWin) {
-                if (j%3 == 1) {
-                    leftBox.appendChild(item);
-                } else if (j%3 == 2) {
-                    midBox.appendChild(item);
-                } else {
-                    rightBox.appendChild(item);
-                }
-            } else {
-                parent.appendChild(item);
-            }
+        var index = (j-1)%colCount + 1;
+        parent.childNodes[index].appendChild(item);
             regViewEvent(item, curId);
             console.log("curId: " + curId);
             curId++;
