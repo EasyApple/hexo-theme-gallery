@@ -47,7 +47,7 @@
     
     // Thanks to https://me.idealli.com/post/73ad4183.html
     // 腾讯云存储桶访问链接
-    var xmlLink="http://photos.museradio.net/"
+    var xmlLink="<%= theme.tencent_cos_url %>";
     xmlDoc=loadXMLDoc(xmlLink);
     var urls = xmlDoc.getElementsByTagName('Key');
     var date = xmlDoc.getElementsByTagName('LastModified');
@@ -72,9 +72,9 @@
     }
     
     var imgId = 0;
-var minWidth = 600;
-var midWidth = 1200;
-var colCount = 3;
+    var minWidth = 600;
+    var midWidth = 1200;
+    var colCount = 3;
     for (var i = 0; i < content.length; i++) {
         var conBox=document.createElement("div");
         conBox.id='conBox' + i;
