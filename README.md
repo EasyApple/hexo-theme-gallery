@@ -12,7 +12,7 @@ A Hexo theme for photography, gallery
 
 ### Demo Site
 
-[35mm 纪实摄影](http://i.35mm.com.cn)
+[画廊](https://gallery.museradio.net)
 
 ### Reference
 
@@ -26,4 +26,4 @@ https://www.ahonn.me/blog/create-a-hexo-theme-from-scratch
 2. 下载主题文件到 themes/gallery/，在网站 _config.yml 中配置当前主题为 gallery；
 3. 在 gallery 主题的 _config.yml 中配置 COS 访问地址：tencent_cos_url: http://yourtencentcosurl/；
 4. 新建 post 并将 Title 设置为与 COS 中某个文件夹名称一致，提交发布即可查看效果；
-5. 主题效果请参考 Demo Site：http://i.35mm.com.cn
+5. 主题效果请参考 Demo Site：https://gallery.museradio.net
