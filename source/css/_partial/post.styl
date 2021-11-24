@@ -37,4 +37,46 @@
   }
 }
 
+#article-nav
+  margin-top: 1.5em
+  clearfix()
+  position: relative
+  @media mq-normal
+    margin: block-margin 0
+    &:before
+      absolute-center(8px)
+      content: ""
+      border-radius: 50%
+      background: color-border
+      box-shadow: 0 1px 2px #fff
+
+.article-nav-link-wrap
+  text-decoration: none
+  text-shadow: 0 1px #fff
+  color: color-grey
+  box-sizing: border-box
+  margin-top: block-margin
+  text-align: center
+  &:hover
+    color: color-default
+  @media mq-normal
+    width: 50%
+    margin-top: 0
+
+#article-nav-newer
+  @media mq-normal
+    float: left
+    text-align: right
+    padding-right: 20px
+
+#article-nav-older
+  @media mq-normal
+    float: right
+    text-align: left
+    padding-left: 20px
+
+.article-nav-title
+  font-size: 1em
+  line-height: 2em
+
 @import "_partial/gallery";

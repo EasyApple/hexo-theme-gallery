@@ -1,0 +1,20 @@
+<% if (page.prev || page.next){ %>
+<nav id="article-nav">
+  <% if (page.prev){ %>
+    <a href="<%- url_for(page.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        <% if (page.prev.title){ %>
+          <%= "< " + page.prev.title %>
+        <% } else { %>
+          (no title)
+        <% } %>
+      </div>
+    </a>
+  <% } %>
+  <% if (page.next){ %>
+    <a href="<%- url_for(page.next.path) %>" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"><%= page.next.title + " >" %></div>
+    </a>
+  <% } %>
+</nav>
+<% } %>

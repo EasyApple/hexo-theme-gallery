@@ -115,6 +115,37 @@ body {
     width: 100%;
 }
 
+#page-nav
+  clearfix()
+  margin: block-margin auto
+  background: #F2F2F2
+  text-align: center
+  color: color-grey
+  overflow: hidden
+  a, span
+    padding: 10px 20px
+    line-height: 1
+    height: 2ex
+  a
+    color: color-grey
+    text-decoration: none
+    &:hover
+      background: color-grey
+      color: #222
+  .prev
+    float: center
+  .next
+    float: center
+  .page-number
+    display: inline-block
+    @media mq-mobile
+      display: none
+  .current
+    color: color-default
+    font-weight: bold
+  .space
+    color: color-border
+
 @import "_partial/header";
 @import "_partial/post";
 @import "_partial/archive";
