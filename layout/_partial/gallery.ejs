@@ -26,8 +26,6 @@
                 chromeXml.open("GET", xmlUrl, false);
                 chromeXml.send(null);
                 xmlDoc = chromeXml.responseXML.documentElement;
-                //alert(xmlDoc.childNodes[0].nodeName);
-                //return xmlDoc;
             } catch(e) {  
                 alert(e.message)  
             }
@@ -35,7 +33,6 @@
         return xmlDoc;
     }
     
-    // Thanks to https://me.idealli.com/post/73ad4183.html
     // 腾讯云存储桶访问链接
     var xmlLink="<%= theme.tencent_cos_url %>";
     // local data for test
