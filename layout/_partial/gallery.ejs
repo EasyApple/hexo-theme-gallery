@@ -32,7 +32,20 @@
         }
         return xmlDoc;
     }
-    
+
+    function getImgTitleHtmlText(xmlLink, title) {
+        htmlText = "<button class=gallery-title style=background:url(" + 
+            xmlLink + '/' + title + "cover.jpg"+");><span style=display:inline;><strong style=color:#fff; >" + 
+            title.substring(0, title.length - 1) + "</strong></span></button>";
+        return htmlText;
+    }
+
+    function getImgBoxHtmlText(imgClass, imgId, xmlLink, title, con) {
+        htmlText = "<div class=" + imgClass + " id=imgbox><img id=" + imgId +
+            " class=imgitem src=" + xmlLink + title + con + " alt=" + con + "></div>";
+        return htmlText;
+    }
+
     // 腾讯云存储桶访问链接
     var xmlLink="<%= theme.tencent_cos_url %>";
     // local data for test
@@ -75,9 +88,7 @@
         mainbox.appendChild(conBox);
         var item=document.createElement("div");
         var title=content[i][0].url;
-        item.innerHTML="<button class=gallery-title style=background:url("+xmlLink+'/'+title+"cover.jpg"+");><span style=display:inline;><strong style=color:#fff; >"+title.substring(0,title.length-1)+"</strong></span></button>";
-        // local data for test
-        //item.innerHTML="<button class=gallery-title style=background:url("+"/images/sample.jpg"+");><span style=display:inline;><strong style=color:#fff; >"+title.substring(0,title.length-1)+"</strong></span></button>";
+        item.innerHTML = getImgTitleHtmlText(xmlLink, title);
         conBox.appendChild(item);
         // 计算子框个数，用于实现按列 float
         if (window.innerWidth > midWidth) {
@@ -102,9 +113,7 @@
             var item = document.createElement("li");
             var index = (j - 1)%colCount;
             var imgClass = "imgbox" + index;
-            item.innerHTML="<div class=" + imgClass + " id=imgbox><img id="+imgId+" class=imgitem src="+xmlLink+title+con+" alt="+con+"></div>";
-            // local data for test
-            //item.innerHTML="<div class=" + imgClass + " id=imgbox><img id="+imgId+" class=imgitem src="+"/images/sample.jpg"+" alt="+con+"></div>";
+            item.innerHTML = getImgBoxHtmlText(imgClass, imgId, xmlLink, title, con);
             subBoxes[index].appendChild(item);
             regViewEvent(item, imgId);
             console.log("imgId: " + imgId);
@@ -193,9 +202,7 @@
             var item = document.createElement("li");
             var index = (j - 1) % colCount + 1;
             var imgClass = "imgbox" + (index - 1);
-            item.innerHTML="<div class=" + imgClass + " id=imgbox><img id="+imgId+" class=imgitem src="+xmlLink+title+con+" alt="+con+"></div>";
-            // local data for test
-            //item.innerHTML="<div class=" + imgClass + " id=imgbox><img id="+imgId+" class=imgitem src="+"/images/sample.jpg"+" alt="+con+"></div>";
+            item.innerHTML = getImgBoxHtmlText(imgClass, imgId, xmlLink, title, con);
             parent.childNodes[index].appendChild(item);
             regViewEvent(item, curId);
             console.log("curId: " + curId);
