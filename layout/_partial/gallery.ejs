@@ -48,8 +48,6 @@
 
     // 腾讯云存储桶访问链接
     var xmlLink="<%= theme.tencent_cos_url %>";
-    // local data for test
-    //xmlLink = "/images/photos.xml";
     xmlDoc=loadXMLDoc(xmlLink);
     var urls = xmlDoc.getElementsByTagName('Key');
     var date = xmlDoc.getElementsByTagName('LastModified');
