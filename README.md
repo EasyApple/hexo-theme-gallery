@@ -17,12 +17,3 @@
 3. 在 gallery 主题的 _config.yml 中配置 COS 访问地址：tencent_cos_url: http://yourtencentcosurl/；
 4. 新建 post 并将 Title 设置为与 COS 中某个文件夹名称一致，提交发布即可查看效果；
 5. 主题效果请参考 Demo Site：https://gallery.museradio.net
-
-## Demo Site
-
-* [画廊 - 纪实摄影](https://gallery.museradio.net)
-
-## Reference
-
-* [从零开始制作 Hexo 主题](https://www.ahonn.me/blog/create-a-hexo-theme-from-scratch)
-
